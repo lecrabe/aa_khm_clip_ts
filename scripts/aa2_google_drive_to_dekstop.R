@@ -1,11 +1,11 @@
 ####################################################################################
 ####### Object: Google Drive to Local Drive    
 ####### Author:  remi.dannunzio@fao.org                               
-####### Update:  2017/10/22                                    
+####### Update:  2019/02/07                                   
 ###################################################################################
 
 ####### TIME SERIES DATA ARE GENERATED IN GOOGLE EARTH ENGINE
-##      https://code.earthengine.google.com/6349290af151862c244cac3bcdc44318
+##      https://code.earthengine.google.com/b758a7ac4629ea95591078800419f33b
 
 
 ###################################################################################
@@ -19,7 +19,7 @@
 ####################################################################################################################
 
 #### Select a basename for the archives to transfer
-base <- 'median_roi_clip'
+base <- 'median_hul_clip'
 setwd(rootdir)
 
 #### Initialize the DRIVE function, change the authorization key
