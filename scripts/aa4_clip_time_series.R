@@ -51,8 +51,6 @@ for(the_id in listodo[1:to_go]){
   ####################################################################
   ################# Open the image output file
   
-
-  
   ## Check which point is being processed
   (the_pt <- pts[pts[,point_id]==the_id,])
   
