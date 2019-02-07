@@ -20,7 +20,7 @@
 
 #### Select a basename for the archives to transfer
 base <- 'median_hul_clip'
-setwd(rootdir)
+setwd(sae_dir)
 
 #### Initialize the DRIVE function, change the authorization key
 system(sprintf("echo %s | drive init",
@@ -31,7 +31,7 @@ system(sprintf("drive list -matches %s > %s",
                paste0(base),
                "list_down.txt"))
 
-data_input <- basename(unlist(read.table("list_down.txt")))
+data_input <- basename(as.character(unlist(read.table("list_down.txt"))))
          
 #### download
 for(data in data_input){
@@ -40,12 +40,12 @@ for(data in data_input){
 }
 
 #### Create two destination folders
-dir.create(paste0(data_dir,"time_series_image_dir/landsat/"),recursive = T)
-dir.create(paste0(data_dir,"time_series_image_dir/sentinel/"),recursive = T)
+dir.create(paste0(sae_dir,"landsat/"),recursive = T)
+dir.create(paste0(sae_dir,"sentinel/"),recursive = T)
 
 #### Make a subset for LANDSAT and one for SENTINEL
 lsat <- data_input[grep(paste0("lsat"),data_input)]
 stnl <- data_input[grep(paste0("s2"),data_input)]
 
-lapply(lsat,function(x){file.rename(x,paste0(data_dir,"time_series_image_dir/landsat/",x))})
-lapply(stnl,function(x){file.rename(x,paste0(data_dir,"time_series_image_dir/sentinel/",x))})
+lapply(lsat,function(x){file.rename(x,paste0(sae_dir,"landsat/",x))})
+lapply(stnl,function(x){file.rename(x,paste0(sae_dir,"sentinel/",x))})
