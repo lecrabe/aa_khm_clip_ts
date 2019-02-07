@@ -6,6 +6,8 @@
 ####################################################################################################
 ####################################################################################################
 
-the_map    <- gfc_mp_sub
-sae_dir    <- paste0(dirname(the_map),"/","sae_design_",substr(basename(the_map),1,nchar(basename(the_map))-4),"/")
+the_map    <- ""
+sae_dir    <- "~/aa_khm_clip_ts/"
+setwd(sae_dir)
+sae_dir <- paste0(getwd(),"/")
 point_file <- list.files(sae_dir,glob2rx("pts_*.csv"))
