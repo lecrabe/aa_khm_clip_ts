@@ -29,8 +29,11 @@ lsat_basename <- "median_hul_clip_lsat_"
 stnl_basename <- "median_hul_clip_s2_"
 
 ## The export image will be in a 1 (height) x 6 (width) grid box
-dim_v_grid <- 1
-dim_h_grid <- 6
+dim_v_grid <- 2
+dim_h_grid <- 3
+
+#### COLOR OF THE BOX IN THE IMAGE
+color <- "blue"
 
 ## setup year start and end for landsat 
 yr_str_lsat <- 2014
